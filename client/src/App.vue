@@ -1,30 +1,31 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import IntroPage from "./components/pages/IntroPage.vue";
+import MusicPage from "./components/pages/MusicPage.vue";
+import VueScrollSnap from "vue-scroll-snap";
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <vue-scroll-snap :fullscreen="true">
+    <div class="item">
+      <IntroPage />
+    </div>
+    <div class="item">
+      <MusicPage />
+    </div>
+  </vue-scroll-snap>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+@import url("https://fonts.googleapis.com/css2?family=Literata:wght@400;700;800;900&display=swap");
+
+.item {
+  min-height: 500px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.scroll-snap-container {
+  height: 500px;
+  width: 500px;
+  scroll-behavior: smooth;
+  transition: scroll 1.5s ease; /* TODO: adjust for slower scroll */
 }
 </style>
