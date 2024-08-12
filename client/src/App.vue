@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import IntroPage from "./components/pages/IntroPage.vue";
 import MusicPage from "./components/pages/MusicPage.vue";
+import CalendarPage from "./components/pages/CalendarPage.vue";
 import VueScrollSnap from "vue-scroll-snap";
 </script>
 
@@ -11,6 +12,9 @@ import VueScrollSnap from "vue-scroll-snap";
     </div>
     <div class="item">
       <MusicPage />
+    </div>
+    <div class="item">
+      <CalendarPage />
     </div>
   </vue-scroll-snap>
 </template>
