@@ -8,24 +8,17 @@ function toggleNavbar() {
 }
 </script>
 
-/* Betula */
-
-font-family: 'Literata';
-font-style: italic;
-font-weight: 800;
-font-size: 24px;
-line-height: 36px;
-
-color: #F7F7F7;
-
-border: 1px solid #14181D;
-
-
 <template>
   <div>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <p class="navbar-text">Betula</p>
+        <img
+          src="/navlogo.svg"
+          class="navbar-logo"
+          alt="nav-logo"
+          @click="toggleNavbar"
+          :class="{ 'is-active': isActive }"
+        />
         <img
           src="/nav.svg"
           class="nav-icon"
@@ -56,44 +49,22 @@ border: 1px solid #14181D;
   height: 4em;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 0 1em;
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
-  margin-left: auto;
+  justify-content: space-between; /* Space out the items */
+  width: 100%; /* Ensure it takes up the full width */
 }
 
-.navbar-text {
-  font-family: "Literata", serif;
-  font-style: italic;
-  font-weight: 700; 
-  font-size: 24px; 
-  color: #f7f7f7; /* Adjust color as needed */
-  margin-right: 1em; /* Space between text and the icon */
-  line-height: 36px;
+.navbar-logo {
+  margin-right: auto; /* Pushes the logo to the left */
 }
 
-.navbar-burger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 2em;
-  height: 2em;
-  background: none;
-  border: none;
+.nav-icon {
   cursor: pointer;
-}
-
-.navbar-burger span {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: white;
-  border-radius: 1px;
-  transition: all 0.3s ease;
 }
 
 .navbar-menu {

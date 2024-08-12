@@ -22,15 +22,12 @@ import Navbar from "../Navbar.vue";
 </template>
 
 <style scoped>
-
 .listen, .live {
   font-family: "Literata", serif;
   font-style: normal;
   font-weight: 400; 
   font-size: 32px;
   line-height: 47.52px;
-
-
   color: #f7f7f7;
 }
 </style>
