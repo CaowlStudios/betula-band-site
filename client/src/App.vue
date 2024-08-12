@@ -18,6 +18,10 @@ import VueScrollSnap from "vue-scroll-snap";
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Literata:wght@400;700;800;900&display=swap");
 
+* {
+  background-color: #000205;
+}
+
 .item {
   min-height: 500px;
 }
