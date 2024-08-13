@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "dayjs": "^1.11.12",
     "dotenv": "^16.4.5",
     "vue": "^3.4.31",
     "vue-responsive-video-background-player": "^2.3.1",
