@@ -1,7 +1,11 @@
 <script lang="ts">
 import { ref, onMounted } from "vue";
+import Navbar from "../Navbar.vue";
 
 export default {
+  components: {
+    Navbar // Register the Navbar component
+  },
   setup() {
     const events = ref([]);
 
@@ -31,6 +35,7 @@ export default {
 
 <template>
   <div>
+    <Navbar />
     <h1>Upcoming Events</h1>
     <ul>
       <li v-for="event in events" :key="event.name">
