@@ -71,7 +71,7 @@ export default {
 <style scoped>
 .calendar-container {
   padding: 20px;
-  background-color: #1e1e1e;
+  background-color: #000205;
   color: #f5f5f5;
 }
 
