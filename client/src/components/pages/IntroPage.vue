@@ -2,10 +2,13 @@
 
 <template>
   <div class="container">
-    <h1 class="betula-text">Betula</h1>
-    <h2 class="new-paltz">New Paltz, NY</h2>
-    <p class="discover-our-music">Discover our music</p>
-    <img src="/arrow.svg" class="arrow-curved" alt="arrow curved" />
+    <video-background src="vid.mp4" overlay="linear-gradient(45deg,#2a4ae430,#fb949e6b)"
+    style="height: 100vh; width: 100%;">
+      <h1 class="betula-text">Betula</h1>
+      <h2 class="new-paltz">New Paltz, NY</h2>
+      <p class="discover-our-music">Discover our music</p>
+      <img src="/arrow.svg" class="arrow-curved" alt="arrow curved" />
+    </video-background>
   </div>
 </template>
 
@@ -45,7 +48,7 @@
   line-height: 59px;
   color: #f7f7f7;
   position: absolute;
-  top: 150px; /* Adjust positioning as needed */
+  top: 175px; /* Adjust positioning as needed */
 
   -webkit-text-stroke: 1px #000205;
 }
