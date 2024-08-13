@@ -1,8 +1,9 @@
-<script lang="ts"></script>
+<script>
+</script>
 
 <template>
   <div class="container">
-    <video-background src="vid.mp4" overlay="linear-gradient(45deg,#2a4ae430,#fb949e6b)"
+    <video-background src="vid.mp4"
     style="height: 100vh; width: 100%;">
       <h1 class="betula-text">Betula</h1>
       <h2 class="new-paltz">New Paltz, NY</h2>

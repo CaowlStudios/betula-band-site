@@ -38,7 +38,7 @@ export default {
     <Navbar />
     <h1>Upcoming Events</h1>
     <ul>
-      <li v-for="event in events" :key="event.name">
+      <li v-for="event in events as any" :key="event.name">
         <h2>{{ event.name }}</h2>
         <p>{{ event.location }}</p>
         <p>{{ event.description }}</p>
