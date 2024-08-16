@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// @ts-ignore
 import IntroPage from "./components/pages/IntroPage.vue";
 import MusicPage from "./components/pages/MusicPage.vue";
 import CalendarPage from "./components/pages/CalendarPage.vue";
