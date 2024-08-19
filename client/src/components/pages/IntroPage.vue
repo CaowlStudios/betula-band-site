@@ -3,12 +3,15 @@
 
 <template>
   <div class="container">
-    <video-background src="vid.mp4"
-    style="height: 100vh; width: 100%;">
-      <h1 class="betula-text">Betula</h1>
-      <h2 class="new-paltz">New Paltz, NY</h2>
-      <p class="discover-our-music">Discover our music</p>
-      <img src="/arrow.svg" class="arrow-curved" alt="arrow curved" />
+    <video-background src="vid.mp4" style="height: 100vh; width: 100%;">
+      <div class="content-wrapper">
+        <h1 class="betula-text">Betula</h1>
+        <h2 class="new-paltz">New Paltz, NY</h2>
+        <div class="arrow-section">
+          <img src="/arrow.svg" class="arrow-curved" alt="arrow curved" />
+          <p class="discover-our-music">Discover our music</p>
+        </div>
+      </div>
     </video-background>
   </div>
 </template>
@@ -16,60 +19,119 @@
 <style scoped>
 .container {
   background-image: url("/bg.jpeg");
-  background-size: cover; /* Ensures the image covers the entire container */
-  background-position: center; /* Centers the background image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  height: 100vh; /* Full viewport height */
-  width: 100%; /* Full width */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-wrapper {
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  position: relative; /* Ensures absolute positioning of children works */
+  gap: 20px;
+  padding-bottom: 50px;
 }
 
 .betula-text {
   font-family: "Literata", serif;
+  margin-top: 60px; /* Moves Betula down from the top */
+  margin-bottom: -25px; /* Reduces space between Betula and New Paltz, NY */
   font-style: normal;
-  font-weight: 800; /* Extra Bold */
-  font-size: 110px;
-  line-height: 163px;
+  font-weight: 800;
+  font-size: 130px; /* Ensures Betula remains prominent */
+  line-height: 100px;
   color: #f7f7f7;
-  position: absolute;
-  top: 0px; /* Adjust positioning as needed */
-
   -webkit-text-stroke: 1px #000205;
 }
 
 .new-paltz {
   font-family: "Literata", serif;
   font-style: normal;
-  font-weight: 800; /* Extra Bold */
-  font-size: 40px;
-  line-height: 59px;
+  font-weight: 800;
+  font-size: 35px; /* Slightly smaller for balanced spacing */
+  line-height: 0px; /* Removes additional line height */
   color: #f7f7f7;
-  position: absolute;
-  top: 175px; /* Adjust positioning as needed */
-
   -webkit-text-stroke: 1px #000205;
 }
 
-.arrow-curved {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  top: 250px; /* Adjust positioning as needed */
-  transform: rotate(90deg);
+.arrow-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 450px; /* Ensures proper spacing below New Paltz, NY */
+}
+
+.arrow-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute; /* Position the arrow section absolutely */
+  bottom: 140px; /* Adjust the bottom margin as needed */
+  left: 0;
+  right: 0;
+  margin: 0 auto; /* Center horizontally */
 }
 
 .discover-our-music {
   font-family: "Literata", serif;
   font-style: normal;
-  font-weight: 900; /* Extra Bold */
-  font-size: 16px;
+  font-weight: 900;
+  font-size: 18px; /* Visibility increased */
   line-height: 24px;
   color: #ffffff;
-  position: absolute;
-  top: 370px; /* Adjust positioning as needed */
+  margin-top: -120px; /* Position text closer to the arrow */
+}
+
+/* Media queries */
+
+
+@media (min-width: 768px) { /* For tablets and larger */
+  .betula-text {
+    font-size: 150px;
+  }
+
+  .new-paltz {
+    font-size: 40px;
+  }
+
+  .arrow-curved {
+    width: 120px;
+    height: 120px;
+  }
+
+  .discover-our-music {
+    font-size: 20px;
+    margin-top: -150px; /* Adjust margin for larger screens */
+  }
+}
+
+@media (min-width: 1024px) { /* For desktops and larger */
+  .betula-text {
+    font-size: 200px;
+  }
+
+  .new-paltz {
+    font-size: 50px;
+  }
+
+  .arrow-curved {
+    width: 150px;
+    height: 150px;
+  }
+
+  .discover-our-music {
+    font-size: 24px;
+    margin-top: -180px; /* Adjust margin for larger screens */
+  }
+
+
+
+  
 }
 </style>
