@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted } from 'vue';
 import Navbar from "../Navbar.vue";
 
 // Add the Spotify iFrame API script
@@ -9,18 +10,22 @@ if (typeof window !== 'undefined') {
   document.body.appendChild(script);
 }
 
-// Initialize Spotify Embed once the API is ready
-if (typeof window !== 'undefined') {
-  window.onSpotifyIframeApiReady = (IFrameAPI) => {
-    const element = document.getElementById('embed-iframe');
-    const options = {
-      uri: 'spotify:album:0623OHXfWOVDd74K8lrwO6' // Replace with your track or playlist URI
-    };
-    IFrameAPI.createController(element, options, () => {
-      console.log('Spotify Embed is ready!');
-    });
-  };
-}
+// Append the Spotify iframe dynamically when the component mounts
+onMounted(() => {
+  const embedIframe = document.getElementById('embed-iframe');
+  if (embedIframe) {
+    const iframe = document.createElement('iframe');
+    iframe.style.borderRadius = '12px';
+    iframe.src = "https://open.spotify.com/embed/track/0j2JcSeuF8ElJTrC8g6493?utm_source=generator&theme=0";
+    iframe.width = '100%';
+    iframe.height = '200%';
+    iframe.frameBorder = '0';
+    iframe.allowFullscreen = true;
+    iframe.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+    iframe.loading = 'lazy';
+    embedIframe.appendChild(iframe);
+  }
+});
 </script>
 
 <template>
@@ -33,57 +38,86 @@ if (typeof window !== 'undefined') {
       </div>
       <div class="live">
         <p class="text">Or come watch us live</p>
-        <img src="/box.svg" class="box" alt="box live" />
+        <div class="box"></div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+/* Container to take the full height of the viewport */
 .content-container {
-  width: calc(100% - 40px);
-  max-width: 1200px;
-  margin: 0 auto;
+  height: 100vh; /* Full viewport height */
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Add gap between sections */
+  justify-content: space-between; /* Distribute space between sections */
+  padding: 0 20px; /* Add some side padding */
+  box-sizing: border-box; /* Make sure padding is included in width calculation */
 }
 
-.listen,
-.live {
-  flex: 1; /* Allow each section to take up equal space */
+/* Listen Section */
+.listen {
+  flex: 1;
+ 
 }
 
 .text {
   font-family: "Literata", serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
-  line-height: 47.52px;
+  font-size: 24px; /* Reduce font size for smaller screens */
   color: #f7f7f7;
   margin-bottom: 10px;
   text-align: left;
 }
 
+/* Spotify Embed */
 #embed-iframe {
   width: 100%;
   max-width: 100%;
-  height: 380px; /* Set a fixed height */
+  height: 200px; /* Reduce the height for smaller screens */
 }
 
+/* Live Section */
+.live {
+  flex: 1;
+}
+
+/* Box for the live section */
 .box {
   width: 100%;
-  max-width: 100%;
-  height: auto;
+  height: 120px; /* Further reduced height */
+  background-color: #a0522d;
+  border-radius: 10px;
 }
 
-@media (max-width: 768px) {
+/* Adjustments for iPhone XR or similar-sized devices */
+@media (max-width: 768px) { /* For iPhone XR and similar */
   .text {
-    font-size: 24px;
+    font-size: 20px; /* Slightly larger text for bigger devices */
   }
 
   #embed-iframe {
-    height: 300px; /* Adjust height for smaller screens */
+    height: 180px; /* Slightly larger height */
+  }
+
+  .box {
+    height: 285px; /* Larger height for slightly larger screens */
+  }
+}
+
+/* Adjustments for iPhone SE */
+@media (max-width: 377px) { /* For iPhone SE */
+  .text {
+    font-size: 18px; /* Smaller text size */
+  }
+
+  #embed-iframe {
+    height: 150px; /* Smaller height for iPhone SE */
+  }
+
+  .box {
+    height: 130px; /* Specific box height for iPhone SE */
   }
 }
 </style>
