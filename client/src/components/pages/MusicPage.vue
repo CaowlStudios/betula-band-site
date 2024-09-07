@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted, inject } from 'vue';
 import Navbar from "../Navbar.vue";
+// @ts-ignore
+import NavBarPage from "./NavBarPage.vue";
 
 // Add the Spotify iFrame API script
 if (typeof window !== 'undefined') {
@@ -26,12 +28,17 @@ onMounted(() => {
     embedIframe.appendChild(iframe);
   }
 });
+
+const isActive = inject("isActive");
 </script>
 
 <template>
   <div>
     <Navbar />
-    <div class="content-container">
+    <div v-if="isActive">
+      <NavBarPage></NavBarPage>
+    </div>
+    <div class="content-container" v-else>
       <div class="listen">
         <p class="text">Listen to our music on Spotify</p>
         <div id="embed-iframe"></div>

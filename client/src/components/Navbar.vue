@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, provide } from "vue";
+// @ts-ignore
+import NavBarPage from "./pages/NavBarPage.vue";
 
 let isActive = ref(false);
 
 function toggleNavbar() {
   isActive.value = !isActive.value;
 }
+
+provide("isActive", isActive);
+provide("toggleNavbar", toggleNavbar);
 </script>
 
 <template>
@@ -16,7 +21,7 @@ function toggleNavbar() {
           src="/navlogo.svg"
           class="navbar-logo"
           alt="nav-logo"
-          @click="toggleNavbar"
+          @click="$emit('toggle-navbar')"
           :class="{ 'is-active': isActive }"
         />
         <img
@@ -33,14 +38,15 @@ function toggleNavbar() {
         class="navbar-menu"
         :class="{ 'is-active': isActive }"
       >
-        <div class="navbar-start">
-          <!-- Add navbar items here -->
-        </div>
-        <div class="navbar-end">
-          <!-- Add navbar items here -->
-        </div>
+
       </div>
     </nav>
+  </div>
+
+  <div v-if="isActive" class="menu-overlay">
+    <div class="menu-content">
+      <NavBarPage></NavBarPage>
+    </div>
   </div>
 </template>
 
@@ -50,6 +56,7 @@ function toggleNavbar() {
   display: flex;
   align-items: center;
   padding: 0 1em;
+  z-index: 10;
 }
 
 .navbar-brand {
@@ -80,5 +87,9 @@ function toggleNavbar() {
 .navbar-end {
   display: flex;
   align-items: center;
+}
+
+.menu-overlay {
+  z-index: 9;
 }
 </style>
