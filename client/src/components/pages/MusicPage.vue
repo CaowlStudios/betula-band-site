@@ -299,6 +299,7 @@ function formatTime(dateString: string): string {
   color: #ffcc00;
   position:relative;
   right:-1%;
+  z-index: 0;
 }
 
 /* Styles for the purple/blue box like in the second image */

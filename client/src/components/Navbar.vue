@@ -95,6 +95,7 @@ function toggleNavbar() {
   display: flex;
   justify-content: center; /* Horizontally center content */
   align-items: center; /* Vertically center content */
+  z-index: 1;
 }
 
 .menu-content {
