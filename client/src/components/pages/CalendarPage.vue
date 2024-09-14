@@ -32,12 +32,12 @@ export default {
           .sort((a: any, b: any) => new Date(b.start.dateTime).getTime() - new Date(a.start.dateTime).getTime())
           .slice(0, 3); // Get the 3 most recent events
 
-        events.value = sortedEvents.map((event: any) => ({
-          name: event.summary,
-          location: event.location || null,
-          description: event.description || null,
-          start: event.start.dateTime, // Include start date/time for additional styling
-        }));
+          events.value = sortedEvents.map((event: any) => ({
+  name: event.summary || event.title || event.name, // Use the correct key for the concert name
+  location: event.location || null,
+  description: event.description || null,
+  start: event.start.dateTime,
+}));
       } catch (error) {
         console.error("Error fetching events:", error);
       }
