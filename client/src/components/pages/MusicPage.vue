@@ -23,7 +23,7 @@
                 <p>{{ formatDate(event.start).split(" ")[0].toUpperCase() }}</p>
               </div>
               <div class="event-info">
-                <h3 class="even-text">{{ event.name }}</h3>
+                <h3>{{ event.name }}</h3>
                 <div class="event-details-container">
                   <div class="event-time-container">
                     <span class="event-time">
@@ -47,7 +47,7 @@
                 </div>
               </div>
 
-              <div class="event-reminder">
+              <div class="event-reminder" @click="downloadICS(event)">
                 <!-- Bell icon replaced with provided SVG -->
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M24.7617 28.47C27.867 28.1023 30.9181 27.3695 33.8517 26.2867C31.3673 23.5347 29.9945 19.9575 30 16.25V15C30 12.3478 28.9464 9.8043 27.0711 7.92893C25.1957 6.05357 22.6522 5 20 5C17.3478 5 14.8043 6.05357 12.9289 7.92893C11.0536 9.8043 10 12.3478 10 15V16.25C10.005 19.9577 8.63164 23.5349 6.14666 26.2867C9.035 27.3533 12.08 28.095 15.2383 28.47M24.7617 28.47C21.5983 28.8452 18.4017 28.8452 15.2383 28.47M24.7617 28.47C25.0018 29.2198 25.0616 30.0157 24.936 30.7929C24.8104 31.5701 24.503 32.3067 24.039 32.9426C23.5749 33.5786 22.9672 34.096 22.2653 34.4527C21.5635 34.8094 20.7873 34.9953 20 34.9953C19.2127 34.9953 18.4365 34.8094 17.7347 34.4527C17.0328 34.096 16.4251 33.5786 15.961 32.9426C15.4969 32.3067 15.1896 31.5701 15.064 30.7929C14.9384 30.0157 14.9982 29.2198 15.2383 28.47M5.20667 12.5C5.67661 9.70828 6.92966 7.10741 8.82 5M31.18 5C33.0703 7.10741 34.3234 9.70828 34.7933 12.5" stroke="#CAA24B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -135,6 +135,33 @@ function formatDate(dateString: string): string {
 function formatTime(dateString: string): string {
   return dayjs(dateString).format("h:mm A"); // Only returns the time, e.g., "6:00 PM"
 }
+
+// Function to download an .ics file for adding the event to the calendar
+function downloadICS(event: Event) {
+  // Create the .ics file content
+  const icsContent = `
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Your App//NONSGML v1.0//EN
+BEGIN:VEVENT
+UID:${event.start}@yourapp.com
+DTSTAMP:${dayjs(event.start).format('YYYYMMDDTHHmmssZ')}
+DTSTART:${dayjs(event.start).format('YYYYMMDDTHHmmssZ')}
+SUMMARY:${event.name}
+DESCRIPTION:${event.description || ''}
+LOCATION:${event.location || ''}
+END:VEVENT
+END:VCALENDAR`;
+
+  // Create a blob with the ics content and download it
+  const blob = new Blob([icsContent], { type: 'text/calendar' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${event.name}.ics`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
 </script>
 
 <style scoped>
@@ -189,9 +216,10 @@ function formatTime(dateString: string): string {
 
 /* Each event card */
 .event-card {
-  border-radius: 10px;
+  background-color: #2b2b2b;
+  border-radius: 12px;
   margin-bottom: 10px;
-  padding: 3px;
+  padding: 10px;
   color: #fff;
   font-family: "Literata", serif;
   width: 100%;
@@ -205,10 +233,9 @@ function formatTime(dateString: string): string {
   width: 100%; /* Ensure it takes up the full width */
   border-bottom: 2px solid #ffffff; /* Border across the full content width */
   padding-bottom: 5px; /* Add padding to push content up */
-  margin-left: -15px;
+  margin-left: -10px;
 
 }
-
 
 .event-date {
   background-color: #5939FB;
@@ -257,11 +284,7 @@ function formatTime(dateString: string): string {
   margin: 0;
   font-size: 18px;
   color: #fff;
-  -webkit-text-stroke: 1px #14181D;
-  paint-order: stroke fill;
-  -webkit-text-stroke-color: #14181D;
-  font-family: "Literata",sans-serif;
-  
+  text-transform: uppercase;
 }
 
 /* Separated time and location containers */
@@ -283,8 +306,7 @@ function formatTime(dateString: string): string {
 .event-location-container {
   background-color: #5939FB; /* Different background color for location */
   border-radius: 10px;
-  padding: 3px 6px;
-
+  padding: 2px 5px;
 }
 
 /* Ensure the text color remains readable */
@@ -298,8 +320,6 @@ function formatTime(dateString: string): string {
   font-size: 24px;
   cursor: pointer;
   color: #ffcc00;
-  position:relative;
-  right:-7%;
 }
 
 /* Styles for the purple/blue box like in the second image */
