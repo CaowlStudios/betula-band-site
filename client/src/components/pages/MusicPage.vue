@@ -23,7 +23,7 @@
                 <p>{{ formatDate(event.start).split(" ")[0].toUpperCase() }}</p>
               </div>
               <div class="event-info">
-                <h3>{{ event.name }}</h3>
+                <h3 class="even-text">{{ event.name }}</h3>
                 <div class="event-details-container">
                   <div class="event-time-container">
                     <span class="event-time">
@@ -189,10 +189,9 @@ function formatTime(dateString: string): string {
 
 /* Each event card */
 .event-card {
-  background-color: #2b2b2b;
-  border-radius: 12px;
+  border-radius: 10px;
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 3px;
   color: #fff;
   font-family: "Literata", serif;
   width: 100%;
@@ -206,8 +205,10 @@ function formatTime(dateString: string): string {
   width: 100%; /* Ensure it takes up the full width */
   border-bottom: 2px solid #ffffff; /* Border across the full content width */
   padding-bottom: 5px; /* Add padding to push content up */
+  margin-left: -15px;
 
 }
+
 
 .event-date {
   background-color: #5939FB;
@@ -256,7 +257,11 @@ function formatTime(dateString: string): string {
   margin: 0;
   font-size: 18px;
   color: #fff;
-  text-transform: uppercase;
+  -webkit-text-stroke: 1px #14181D;
+  paint-order: stroke fill;
+  -webkit-text-stroke-color: #14181D;
+  font-family: "Literata",sans-serif;
+  
 }
 
 /* Separated time and location containers */
@@ -278,7 +283,8 @@ function formatTime(dateString: string): string {
 .event-location-container {
   background-color: #5939FB; /* Different background color for location */
   border-radius: 10px;
-  padding: 2px 5px;
+  padding: 3px 6px;
+
 }
 
 /* Ensure the text color remains readable */
@@ -292,6 +298,8 @@ function formatTime(dateString: string): string {
   font-size: 24px;
   cursor: pointer;
   color: #ffcc00;
+  position:relative;
+  right:-7%;
 }
 
 /* Styles for the purple/blue box like in the second image */
