@@ -2,6 +2,7 @@
 // @ts-ignore
 import IntroPage from "./components/pages/IntroPage.vue";
 import MusicPage from "./components/pages/MusicPage.vue";
+import GalleryPage from "./components/pages/GallaryPage.vue"
 import ContactPage from "./components/pages/ContactPage.vue";
 import VueScrollSnap from "vue-scroll-snap";
 </script>
@@ -16,6 +17,9 @@ import VueScrollSnap from "vue-scroll-snap";
     </div>
     <div class="item">
       <ContactPage />
+    </div>
+    <div class="item">
+      <GalleryPage />
     </div>
   </vue-scroll-snap>
 </template>
