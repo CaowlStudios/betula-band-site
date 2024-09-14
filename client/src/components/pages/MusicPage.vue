@@ -215,10 +215,9 @@ END:VCALENDAR`;
 
 /* Each event card */
 .event-card {
-  background-color: #2b2b2b;
-  border-radius: 12px;
+  border-radius: 10px;
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 3px;
   color: #fff;
   font-family: "Literata", serif;
   width: 100%;
@@ -229,11 +228,12 @@ END:VCALENDAR`;
   display: flex;
   align-items: center; /* Vertically center items */
   justify-content: space-between; /* Space between the date, info, and bell */
-  width: 100%; /* Ensure it takes up the full width */
   border-bottom: 2px solid #ffffff; /* Border across the full content width */
   padding-bottom: 5px; /* Add padding to push content up */
+  margin-left: -15px;
 
 }
+
 
 .event-date {
   background-color: #5939FB;
@@ -282,7 +282,11 @@ END:VCALENDAR`;
   margin: 0;
   font-size: 18px;
   color: #fff;
-  text-transform: uppercase;
+  -webkit-text-stroke: 1px #14181D;
+  paint-order: stroke fill;
+  -webkit-text-stroke-color: #14181D;
+  font-family: "Literata",sans-serif;
+  
 }
 
 /* Separated time and location containers */
@@ -304,7 +308,8 @@ END:VCALENDAR`;
 .event-location-container {
   background-color: #5939FB; /* Different background color for location */
   border-radius: 10px;
-  padding: 2px 5px;
+  padding: 3px 7px;
+
 }
 
 /* Ensure the text color remains readable */
@@ -318,6 +323,9 @@ END:VCALENDAR`;
   font-size: 24px;
   cursor: pointer;
   color: #ffcc00;
+  position:relative;
+  right:-1%;
+  z-index: 0;
 }
 
 /* Styles for the purple/blue box like in the second image */
@@ -328,7 +336,7 @@ END:VCALENDAR`;
 }
 
 .event-card.highlight .event-date {
-  background-color: #5859ff;
+  background-color: #5939FB;
   color: #fff;
 }
 
