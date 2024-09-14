@@ -6,7 +6,7 @@ import Navbar from "../Navbar.vue";
 <template>
     <Navbar />
     <div>
-        <h1>Contact Us</h1>
+        <h1>Get in touch with us</h1>
     </div>
 </template>
 
