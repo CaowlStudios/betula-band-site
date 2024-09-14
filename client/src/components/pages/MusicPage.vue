@@ -202,7 +202,6 @@ function formatTime(dateString: string): string {
   display: flex;
   align-items: center; /* Vertically center items */
   justify-content: space-between; /* Space between the date, info, and bell */
-  width: 100%; /* Ensure it takes up the full width */
   border-bottom: 2px solid #ffffff; /* Border across the full content width */
   padding-bottom: 5px; /* Add padding to push content up */
   margin-left: -15px;
@@ -283,7 +282,7 @@ function formatTime(dateString: string): string {
 .event-location-container {
   background-color: #5939FB; /* Different background color for location */
   border-radius: 10px;
-  padding: 3px 6px;
+  padding: 3px 7px;
 
 }
 
@@ -299,7 +298,7 @@ function formatTime(dateString: string): string {
   cursor: pointer;
   color: #ffcc00;
   position:relative;
-  right:-7%;
+  right:-1%;
 }
 
 /* Styles for the purple/blue box like in the second image */
@@ -310,7 +309,7 @@ function formatTime(dateString: string): string {
 }
 
 .event-card.highlight .event-date {
-  background-color: #5859ff;
+  background-color: #5939FB;
   color: #fff;
 }
 
