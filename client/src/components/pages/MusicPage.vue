@@ -230,7 +230,6 @@ END:VCALENDAR`;
   display: flex;
   align-items: center; /* Vertically center items */
   justify-content: space-between; /* Space between the date, info, and bell */
-  width: 100%; /* Ensure it takes up the full width */
   border-bottom: 2px solid #ffffff; /* Border across the full content width */
   padding-bottom: 5px; /* Add padding to push content up */
   margin-left: -10px;
@@ -306,7 +305,12 @@ END:VCALENDAR`;
 .event-location-container {
   background-color: #5939FB; /* Different background color for location */
   border-radius: 10px;
+<<<<<<< HEAD
   padding: 2px 5px;
+=======
+  padding: 3px 7px;
+
+>>>>>>> 1414292437cecb70e6505fdbd95c68c139ced710
 }
 
 /* Ensure the text color remains readable */
@@ -320,6 +324,12 @@ END:VCALENDAR`;
   font-size: 24px;
   cursor: pointer;
   color: #ffcc00;
+<<<<<<< HEAD
+=======
+  position:relative;
+  right:-1%;
+  z-index: 0;
+>>>>>>> 1414292437cecb70e6505fdbd95c68c139ced710
 }
 
 /* Styles for the purple/blue box like in the second image */
@@ -330,7 +340,7 @@ END:VCALENDAR`;
 }
 
 .event-card.highlight .event-date {
-  background-color: #5859ff;
+  background-color: #5939FB;
   color: #fff;
 }
 

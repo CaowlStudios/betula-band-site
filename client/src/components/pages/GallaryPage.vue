@@ -48,9 +48,11 @@
   font-size: 80px;
   line-height: 100px;
   color: #f7f7f7;
-  -webkit-text-stroke: 1px #000205;
+  -webkit-text-stroke: 5px #000205;
   text-align: left; /* Placera texten till vänster */
   margin-right: 130px; /* Justera marginalen för att flytta texten in från vänster */
+  paint-order: stroke fill;
+  -webkit-text-stroke-color: #14181D;
 }
 
 
@@ -63,8 +65,10 @@
   font-size: 80px; /* Ensures Betula remains prominent */
   line-height: 100px;
   color: #f7f7f7;
-  -webkit-text-stroke: 1px #000205;
+  -webkit-text-stroke: 4px #000205;
   margin-right: 40px; /* Justera marginalen för att flytta texten in från vänster */
+  paint-order: stroke fill;
+  -webkit-text-stroke-color: #14181D;
 }
 
 .gallery-and-biography {
@@ -75,8 +79,10 @@
   font-size: 20px; /* Slightly smaller for balanced spacing */
   line-height: 0px; /* Removes additional line height */
   color: #f7f7f7;
-  -webkit-text-stroke: 1px #000205;
+  -webkit-text-stroke: 2.5px #000205;
   margin-right: 80px; /* Justera marginalen för att flytta texten in från vänster */
+  paint-order: stroke fill;
+  -webkit-text-stroke-color: #14181D;
 }
 
 .arrow-section {
@@ -95,6 +101,8 @@
   left: 0;
   right: 0;
   margin: 0 auto; /* Center horizontally */
+  paint-order: stroke fill;
+  -webkit-text-stroke-color: #14181D;
 }
 
 .discover-our-music {
@@ -105,6 +113,9 @@
   line-height: 24px;
   color: #ffffff;
   margin-top: -120px; /* Position text closer to the arrow */
+  -webkit-text-stroke: 2.5px #000205;
+  paint-order: stroke fill;
+  -webkit-text-stroke-color: #14181D;
 }
 
 /* Media queries */
