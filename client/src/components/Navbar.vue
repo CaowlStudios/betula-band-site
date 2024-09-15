@@ -58,7 +58,6 @@ function toggleNavbar() {
   display: flex;
   align-items: center;
   padding: 0 1em;
-  background-color: #000;
 }
 
 .navbar-brand {
