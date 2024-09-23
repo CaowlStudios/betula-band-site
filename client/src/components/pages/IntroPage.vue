@@ -49,7 +49,7 @@
   color: #f7f7f7;
   -webkit-text-stroke: 5px #000205;
   paint-order: stroke fill;
-  -webkit-text-stroke-color: #14181D;
+  -webkit-text-stroke-color: #000205;
 }
 
 .new-paltz {
@@ -61,7 +61,7 @@
   color: #f7f7f7;
   -webkit-text-stroke: 4px #000205;
   paint-order: stroke fill;
-  -webkit-text-stroke-color: #14181D;
+  -webkit-text-stroke-color: #000205;
 }
 
 .arrow-section {
@@ -92,7 +92,7 @@
   margin-top: -120px; /* Position text closer to the arrow */
   -webkit-text-stroke: 2.5px #000205;
   paint-order: stroke fill;
-  -webkit-text-stroke-color: #14181D;
+  -webkit-text-stroke-color: #000205;
 }
 
 /* Media queries */

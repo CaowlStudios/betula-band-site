@@ -52,7 +52,7 @@
   text-align: left; /* Placera texten till vänster */
   margin-right: 130px; /* Justera marginalen för att flytta texten in från vänster */
   paint-order: stroke fill;
-  -webkit-text-stroke-color: #14181D;
+  -webkit-text-stroke-color: #000205;
 }
 
 
@@ -68,7 +68,7 @@
   -webkit-text-stroke: 4px #000205;
   margin-right: 40px; /* Justera marginalen för att flytta texten in från vänster */
   paint-order: stroke fill;
-  -webkit-text-stroke-color: #14181D;
+  -webkit-text-stroke-color: #000205;
 }
 
 .gallery-and-biography {
@@ -82,7 +82,7 @@
   -webkit-text-stroke: 2.5px #000205;
   margin-right: 80px; /* Justera marginalen för att flytta texten in från vänster */
   paint-order: stroke fill;
-  -webkit-text-stroke-color: #14181D;
+  -webkit-text-stroke-color: #000205;
 }
 
 .arrow-section {
@@ -102,7 +102,7 @@
   right: 0;
   margin: 0 auto; /* Center horizontally */
   paint-order: stroke fill;
-  -webkit-text-stroke-color: #14181D;
+  -webkit-text-stroke-color: #000205;
 }
 
 .discover-our-music {
@@ -115,7 +115,7 @@
   margin-top: -120px; /* Position text closer to the arrow */
   -webkit-text-stroke: 2.5px #000205;
   paint-order: stroke fill;
-  -webkit-text-stroke-color: #14181D;
+  -webkit-text-stroke-color: #000205;
 }
 
 /* Media queries */

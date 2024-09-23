@@ -42,7 +42,7 @@ import Navbar from "../Navbar.vue";
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/betula_band/?utm_source=ig_embed&amp;utm_campaign=loading"
        data-instgrm-version="14" style=" background:#ffffff67;
         border:0; border-radius:6px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); 
-        margin: 1px; max-width:540px; min-width:326px; max-height: 260px;
+        margin: 1px; max-width:540px; min-width:326px; max-height: 235px;
         padding:0; width:99.375%; width:-webkit-calc(100% - 2px); 
         width:calc(10% - 2px);"><div style="padding:16px;"> 
         <a href="https://www.instagram.com/betula_band/?utm_source=ig_embed&amp;utm_campaign=loading"
@@ -66,8 +66,7 @@ import Navbar from "../Navbar.vue";
               <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> 
               <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> 
                 <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> 
-                <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div>
-              </div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">@<a href="https://www.instagram.com/betula_band/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank">betula_band</a> • Instagram photos and videos</p></div></blockquote>
+                <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">@<a href="https://www.instagram.com/betula_band/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank">betula_band</a> • Instagram photos and videos</p></div></blockquote>
     </div>
 
   </div>
@@ -83,8 +82,8 @@ h1 {
   margin-left: 45px;
   font-family: "Literata", serif;
   paint-order: stroke fill;
-  -webkit-text-stroke-color: #14181D;
-  -webkit-text-stroke: 5px #14181D;
+  -webkit-text-stroke-color: #000205;
+  -webkit-text-stroke: 5px #000205;
   font-style: normal;
   font-weight: 400;
 
@@ -111,8 +110,8 @@ h3 {
   text-align: center;
   font-family: "Literata", serif;
   paint-order: stroke fill;
-  -webkit-text-stroke-color: #14181D;
-  -webkit-text-stroke: 5px #14181D;
+  -webkit-text-stroke-color: #000205;
+  -webkit-text-stroke: 5px #000205;
   font-style: normal;
   font-weight: 400;
 }
@@ -128,10 +127,10 @@ h3 {
 .email-address-container {
   display: flex;
   align-items: center;
-  background-color: #14181D;
+  background-color: #000205;
   padding: 0px; /* Adjusted padding for better alignment */
   border-radius: 5px; /* Match the border-radius of input */
-  border: 2px solid rgba(255, 204, 0, 0.2);
+  border: 1px solid rgba(255, 204, 0, 0.3);
   min-height: 5px; /* Smaller height for the email address input */
   margin-bottom: -5px;
 }
@@ -153,7 +152,7 @@ h3 {
   line-height: 24px; 
   color: rgb(254, 254, 254);
   font-size: 16px; 
-  background-color: #14181D; 
+  background-color: #000205; 
   -webkit-text-stroke: 2px #0202023c;
   paint-order: stroke fill;
   -webkit-text-stroke-color: #0202023c;
@@ -162,10 +161,10 @@ h3 {
 }
 
 .email-content-container {
-  background-color: #14181D;
+  background-color: #000205;
   padding: 5px;
   border-radius: 10px;
-  border: 2px solid rgba(255, 204, 0, 0.2);
+  border: 1px solid rgba(255, 204, 0, 0.3);
   min-height: 150px; /* Larger height for the email content box */
   
 }
@@ -184,7 +183,7 @@ h3 {
   line-height: 24px; 
   color: rgba(247, 247, 247);
   font-size: 16px; 
-  background-color: #14181D; 
+  background-color: #000205; 
   -webkit-text-stroke: 2px #0202023c;
   paint-order: stroke fill;
   -webkit-text-stroke-color: #0202023c;
@@ -202,9 +201,9 @@ h3 {
 }
 
 .insta-container {
-  background-color: #14181D;
+  background-color: #000205;
   padding: 10px;
   border-radius: 10px;
-  border: 2px solid rgba(255, 204, 0, 0.2);
+  border: 1px solid rgba(255, 204, 0, 0.3);
 }
 </style>
