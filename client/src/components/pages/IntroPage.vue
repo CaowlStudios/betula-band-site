@@ -47,7 +47,9 @@
   font-size: 130px; /* Ensures Betula remains prominent */
   line-height: 100px;
   color: #f7f7f7;
-  -webkit-text-stroke: 1px #000205;
+  -webkit-text-stroke: 5px #000205;
+  paint-order: stroke fill;
+  -webkit-text-stroke-color: #000205;
 }
 
 .new-paltz {
@@ -57,7 +59,9 @@
   font-size: 35px; /* Slightly smaller for balanced spacing */
   line-height: 0px; /* Removes additional line height */
   color: #f7f7f7;
-  -webkit-text-stroke: 1px #000205;
+  -webkit-text-stroke: 4px #000205;
+  paint-order: stroke fill;
+  -webkit-text-stroke-color: #000205;
 }
 
 .arrow-section {
@@ -86,6 +90,9 @@
   line-height: 24px;
   color: #ffffff;
   margin-top: -120px; /* Position text closer to the arrow */
+  -webkit-text-stroke: 2.5px #000205;
+  paint-order: stroke fill;
+  -webkit-text-stroke-color: #000205;
 }
 
 /* Media queries */
