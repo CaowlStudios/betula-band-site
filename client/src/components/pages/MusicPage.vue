@@ -85,14 +85,16 @@ onMounted(() => {
   if (embedIframe) {
     const iframe = document.createElement('iframe');
     iframe.style.borderRadius = '12px';
-    iframe.src = "https://open.spotify.com/embed/track/0j2JcSeuF8ElJTrC8g6493?utm_source=generator&theme=0";
+    iframe.src="https://open.spotify.com/embed/track/1CsMKhwEmNnmvHUuO5nryA?utm_source=generator" ;
     iframe.width = '100%';
-    iframe.height = '200%';
+    iframe.height = '120%';
     iframe.frameBorder = '0';
     iframe.allowFullscreen = true;
     iframe.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
     iframe.loading = 'lazy';
+
     embedIframe.appendChild(iframe);
+    
   }
 
   // Fetch the Google Calendar Events
@@ -186,7 +188,7 @@ END:VCALENDAR`;
 #embed-iframe {
   width: 100%;
   max-width: 100%;
-  height: 200px;
+  
 }
 
 .live {
@@ -194,13 +196,14 @@ END:VCALENDAR`;
 }
 
 .events-container {
-  background-color: #000205;
+  background-color: #14181D;
   padding: 20px;
   border-radius: 10px;
   min-height: 290px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin-bottom: 100px;
   border: 1px solid rgba(255, 204, 0, 0.58)
 }
 
@@ -308,11 +311,12 @@ END:VCALENDAR`;
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .text {
-    font-size: 20px;
+    font-size: 32px;
   }
 
   #embed-iframe {
     height: 180px;
+    overflow:hidden;
   }
 
   .event-info h3 {
