@@ -166,7 +166,20 @@ END:VCALENDAR`;
   justify-content: space-between;
   padding: 0 20px;
   box-sizing: border-box;
+
+    /* Lägg till bakgrundsbild */
+  background-image: url('background-pic.jpg');
+  background-size: cover; /* Ser till att bilden täcker hela ytan */
+  /*background-position: center -64px; /* Placerar bilden centrerat */
+  background-position: -250px -64px; /* Flyttar bilden 60% åt höger och 50px uppåt */
+  background-repeat: no-repeat; /* Förhindrar att bilden upprepas */
+  /*background-size: 100%; /* Gör bilden 150% av containerstorleken */
+
+    /* Lägg till en mörk överlagring och sänk exponeringen */
+  background-color: rgba(0, 0, 0, 0.9); /* Svart färg med 90% transparens */
+  background-blend-mode: darken; /* Använd 'darken' för att minska ljusstyrkan */
 }
+
 
 .listen {
   flex: 1;
