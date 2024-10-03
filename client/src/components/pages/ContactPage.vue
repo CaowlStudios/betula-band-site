@@ -81,12 +81,10 @@ h3 {
 
 
 .main-container {
-  /* background-image: url(''); */
   background-image: url('contact-page-background.png');
   background-size: cover;
   background-position: center 10%;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   height: 100vh;
   position: relative;
 }
@@ -124,7 +122,6 @@ h3 {
   paint-order: stroke fill;
   -webkit-text-stroke-color: #0202023c;
   outline: none; /* Add this line to remove the focus outline */
-  
 }
 
 .email-content-container {
@@ -154,14 +151,13 @@ h3 {
   -webkit-text-stroke: 2px #0202023c;
   paint-order: stroke fill;
   -webkit-text-stroke-color: #0202023c;
-  outline: none; /* Add this line to remove the focus outline */
-  
+  outline: none;
+  resize: none; 
 }
 
 .send-button-container {
   display: flex;
   justify-content: center; /* Center align the send button horizontally */
-
 }
 
 .sendbutton {
