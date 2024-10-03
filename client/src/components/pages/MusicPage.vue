@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-container">
     <Navbar />
     <div v-if="isActive">
       <NavBarPage></NavBarPage>
@@ -166,12 +166,14 @@ END:VCALENDAR`;
   justify-content: space-between;
   padding: 0 20px;
   box-sizing: border-box;
+}
 
+.main-container {
     /* Lägg till bakgrundsbild */
-  background-image: url('background-pic.jpg');
-  background-size: cover; /* Ser till att bilden täcker hela ytan */
+    background-image: url('background-pic.jpg');
+  background-size:cover; /* Ser till att bilden täcker hela ytan */
   /*background-position: center -64px; /* Placerar bilden centrerat */
-  background-position: -250px -64px; /* Flyttar bilden 60% åt höger och 50px uppåt */
+  background-position: -250px ; /* Flyttar bilden 60% åt höger och 50px uppåt */
   background-repeat: no-repeat; /* Förhindrar att bilden upprepas */
   /*background-size: 100%; /* Gör bilden 150% av containerstorleken */
 
