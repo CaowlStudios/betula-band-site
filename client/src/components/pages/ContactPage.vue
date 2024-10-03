@@ -37,6 +37,7 @@ const emailContent = ref('');
     </svg>
   </a>
   </div>
+  </div>
 </div>
 </template>
 
