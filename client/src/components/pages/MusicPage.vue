@@ -170,7 +170,7 @@ END:VCALENDAR`;
 
 .main-container {
     /* Lägg till bakgrundsbild */
-    background-image: url('background-pic.jpg');
+  background-image: url('background-pic.jpg');
   background-size:cover; /* Ser till att bilden täcker hela ytan */
   /*background-position: center -64px; /* Placerar bilden centrerat */
   background-position: -250px ; /* Flyttar bilden 60% åt höger och 50px uppåt */
@@ -323,14 +323,17 @@ END:VCALENDAR`;
   height: 30px;
 }
 
-/* Responsive adjustments */
+
+
+
+
 @media (max-width: 768px) {
   .text {
     font-size: 32px;
   }
 
   #embed-iframe {
-    height: 180px;
+    height: 190px;
     overflow:hidden;
   }
 
@@ -356,6 +359,52 @@ END:VCALENDAR`;
   }
 }
 
+
+
+
+/* Responsive adjustments */
+@media (min-width: 430px) and (max-width: 768px) {
+  .text {
+    font-size: 32px;
+  }
+
+  #embed-iframe {
+    height: 280px;
+    overflow:hidden;
+  }
+
+  .event-info h3 {
+    font-size: 20px;
+  }
+
+  .event-time, .event-location {
+    font-size: 12px;
+  }
+
+  .event-date {
+    width: 50px;
+    height: 50px;
+  }
+
+  .event-date p:first-child {
+    font-size: 30px;
+  }
+
+  .event-date p:last-child {
+    font-size: 25px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 377px) {
   .text {
     font-size: 18px;
@@ -364,5 +413,79 @@ END:VCALENDAR`;
   #embed-iframe {
     height: 150px;
   }
+}
+
+/* brand new ipad air */
+
+@media (min-height: 850px) and (max-height: 1366px) {
+  .text {
+    font-size: 40px;
+  }
+
+  #embed-iframe {
+    height: 390px;
+    overflow:hidden;
+  }
+
+  .event-info h3 {
+    font-size: 25px;
+  }
+
+  .event-time, .event-location {
+    font-size: 18px;
+  }
+
+  .event-date {
+    width: 50px;
+    height: 50px;
+  }
+
+  .event-date p:first-child {
+    font-size: 30px;
+  }
+
+  .event-date p:last-child {
+    font-size: 25px;
+  }
+  /* SAMSIINM ULTRA */
+}
+@media (min-width: 400px) and (max-height: 932px) {
+  .text {
+    font-size: 35px;
+    margin-bottom:5px;
+
+  }
+.live{
+
+margin-top:-60px;
+
+}
+  #embed-iframe {
+    height: 290px;
+    overflow:hidden;
+    margin-top:25px;
+  }
+
+  .event-info h3 {
+    font-size: 20px;
+  }
+
+  .event-time, .event-location {
+    font-size: 12px;
+  }
+
+  .event-date {
+    width: 50px;
+    height: 50px;
+  }
+
+  .event-date p:first-child {
+    font-size: 20px;
+  }
+
+  .event-date p:last-child {
+    font-size: 25px;
+  }
+  
 }
 </style>

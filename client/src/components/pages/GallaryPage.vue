@@ -120,14 +120,46 @@
 
 /* Media queries */
 
-
-@media (min-width: 768px) { /* For tablets and larger */
+@media (min-width: 360px) { /*for da android mandem (samsung) */
   .Our {
-    font-size: 150px;
+    font-size: 80px;
+    margin-bottom: -35px;
+  }
+
+  .journey {
+    font-size: 70px;
+    margin-bottom: -20px;
   }
 
   .gallery-and-biography {
-    font-size: 40px;
+    font-size: 19px;
+  }
+
+  .arrow-curved {
+    width: 56px;
+    height: 56px;
+  }
+
+  .discover-our-music {  /* This is have-a-look */
+    font-size: 20px;
+    margin-top: -90px; /* Adjust margin for larger screens */
+  }
+}
+
+
+@media (min-width: 768px) { /* For tablets and larger */
+  .Our {
+    font-size: 120px;
+    margin-bottom: -10px;
+  }
+
+  .journey {
+    font-size: 90px;
+    margin-bottom: -10px;
+  }
+
+  .gallery-and-biography {
+    font-size: 25px;
   }
 
   .arrow-curved {
@@ -137,31 +169,38 @@
 
   .discover-our-music {
     font-size: 20px;
-    margin-top: -150px; /* Adjust margin for larger screens */
+    margin-top: -120px; /* Adjust margin for larger screens */
   }
 }
 
 @media (min-width: 1024px) { /* For desktops and larger */
   .Our {
-    font-size: 200px;
+    font-size: 120px;
+    
+  }
+
+  .journey {
+    font-size: 100px;
+    margin-bottom: -10px;
   }
 
   .gallery-and-biography {
-    font-size: 50px;
+    font-size: 27px;
   }
 
   .arrow-curved {
     width: 150px;
     height: 150px;
+
   }
 
   .discover-our-music {
     font-size: 24px;
     margin-top: -180px; /* Adjust margin for larger screens */
   }
-
-
-
   
 }
+
+
+
 </style>

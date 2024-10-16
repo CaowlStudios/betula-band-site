@@ -45,10 +45,10 @@ const emailContent = ref('');
 h1 {
   font-size: 35px;
   color: #f7f7f7;
-  text-align: left;
+  text-align: center;
   margin-top: 40px;
   margin-bottom: -20px;
-  margin-left: 45px;
+  margin-left: 15px;
   font-family: "Literata", serif;
   paint-order: stroke fill;
   -webkit-text-stroke-color: #000205;
@@ -61,8 +61,8 @@ h3 {
   font-size: 20px;
   color: #f7f7f7;
   margin-left: 5px;
-
   text-align: center;
+  margin-left: 15px;
   font-family: "Literata", serif;
   paint-order: stroke fill;
   -webkit-text-stroke-color: #000205;
@@ -111,7 +111,7 @@ h3 {
   flex: 1;
   padding: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   font-style: italic;
   box-sizing: border-box;
   font-family: 'Literata', light italic; 
@@ -167,5 +167,41 @@ h3 {
 .sendbutton {
   cursor: pointer; /* Change cursor to pointer for better UX */
 }
+
+
+
+
+/* För mindre skärmar (mobiler) */
+@media (max-height: 844px) {
+  h1 {
+    font-size: 35px;
+    margin-top: 20px;
+    margin-bottom: -15px;
+    margin-left: 10px;
+    -webkit-text-stroke: 3px #000205;
+    
+  }
+  
+  h3 {
+    font-size: 19px;
+    margin-left: 10px;
+    -webkit-text-stroke: 3px #000205;
+  }
+  
+  .email-details-container {
+    padding: 30px;
+    margin-top:40px;
+
+  }
+  
+  .email-address-container input,
+  .email-content-container textarea {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+
+
 
 </style>

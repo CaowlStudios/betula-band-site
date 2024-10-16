@@ -44,7 +44,7 @@
   margin-bottom: -25px; /* Reduces space between Betula and New Paltz, NY */
   font-style: normal;
   font-weight: 800;
-  font-size: 130px; /* Ensures Betula remains prominent */
+  font-size: 110px; /* Ensures Betula remains prominent */
   line-height: 100px;
   color: #f7f7f7;
   -webkit-text-stroke: 5px #000205;
@@ -56,7 +56,7 @@
   font-family: "Literata", serif;
   font-style: normal;
   font-weight: 800;
-  font-size: 35px; /* Slightly smaller for balanced spacing */
+  font-size: 30px; /* Slightly smaller for balanced spacing */
   line-height: 0px; /* Removes additional line height */
   color: #f7f7f7;
   -webkit-text-stroke: 4px #000205;
@@ -97,10 +97,42 @@
 
 /* Media queries */
 
+/* Use dvh if the browser supports it */
+@supports (height: 100dvh) {
+  .full-viewport-height {
+    height: 100dvh;
+  }
+}
 
-@media (min-width: 768px) { /* For tablets and larger */
+
+@media (min-width: 360px) { /*for da android mandem (samsung) */
+  .betula-text {
+    font-size: 90px;
+  }
+
+  .new-paltz {
+    font-size: 24px; 
+  }
+
+  .arrow-curved {
+    width: 56px;
+    height: 56px;
+  }
+
+  .discover-our-music {
+    font-size: 20px;
+    margin-top: -90px; /* Adjust margin for larger screens */
+  }
+
+
+}
+
+
+
+@media (min-width: 480px) { /* For tablets and larger */
   .betula-text {
     font-size: 150px;
+    margin-bottom: 0px; /* Adjusting space between Betula and New Paltz */
   }
 
   .new-paltz {
@@ -108,17 +140,19 @@
   }
 
   .arrow-curved {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
+    margin-top: -95px; /* Adjust margin for larger screens */
   }
 
   .discover-our-music {
     font-size: 20px;
-    margin-top: -150px; /* Adjust margin for larger screens */
+    margin-top: -140px; /* Reduced margin to decrease space between text and arrow */
   }
 }
 
-@media (min-width: 1024px) { /* For desktops and larger */
+
+@media (min-width: 481px) and (max-width:767px){ /* For desktops and larger */
   .betula-text {
     font-size: 200px;
   }
