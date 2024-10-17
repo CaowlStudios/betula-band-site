@@ -81,6 +81,7 @@ h3 {
 
 
 .main-container {
+  background-color: #000205;
   background-image: url('contact-page-background.png');
   background-size: cover;
   background-position: center 10%;
@@ -89,16 +90,34 @@ h3 {
   position: relative;
 }
 
+/* Add the translucent layer */
+.main-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000205b5; /* Adjust opacity and color as needed */
+  z-index: 1;
+}
+
+/* Ensure other content within the container is above the overlay */
+.main-container > * {
+  position: relative;
+  z-index: 2;
+}
 .email-address-container {
   display: flex;
   align-items: center;
-  background-color: #000205;
+  background-color: #14181D;
   padding: 0px; /* Adjusted padding for better alignment */
   border-radius: 5px; /* Match the border-radius of input */
   border: 1px solid rgba(255, 204, 0, 0.3);
   min-height: 5px; /* Smaller height for the email address input */
   margin-bottom: -5px;
 }
+
 
 .email-address-container .icon {
   margin-right: -2px; /* Space between icon and input */
@@ -117,7 +136,7 @@ h3 {
   line-height: 24px; 
   color: rgb(254, 254, 254);
   font-size: 16px;
-  background-color: #000205; 
+  background-color: #14181D; 
   -webkit-text-stroke: 2px #0202023c;
   paint-order: stroke fill;
   -webkit-text-stroke-color: #0202023c;
@@ -125,7 +144,7 @@ h3 {
 }
 
 .email-content-container {
-  background-color: #000205;
+  background-color: #14181D;
   padding: 5px;
   border-radius: 10px;
   border: 1px solid rgba(255, 204, 0, 0.3);
@@ -147,7 +166,7 @@ h3 {
   line-height: 24px; 
   color: rgba(247, 247, 247);
   font-size: 16px; 
-  background-color: #000205; 
+  background-color: #14181D; 
   -webkit-text-stroke: 2px #0202023c;
   paint-order: stroke fill;
   -webkit-text-stroke-color: #0202023c;
@@ -189,11 +208,19 @@ h3 {
     margin-top:40px;
 
   }
-  
+  .email-content-container{
+    min-height: 345px;
+  }
   .email-address-container input,
   .email-content-container textarea {
     font-size: 14px;
     padding: 8px;
+  }
+
+  .sendbutton{
+
+    width:40px;
+    height:40px;
   }
 }
 

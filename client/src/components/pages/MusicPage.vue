@@ -327,7 +327,7 @@ END:VCALENDAR`;
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .text {
     font-size: 32px;
   }
@@ -357,6 +357,17 @@ END:VCALENDAR`;
   .event-date p:last-child {
     font-size: 25px;
   }
+
+
+  .events-container {
+
+    min-height: 0px;
+}
+
+  .live {
+
+    margin-top: -240px;
+}
 }
 
 
@@ -397,27 +408,126 @@ END:VCALENDAR`;
 
 
 
+/* for the android fellas */
 
 
 
-
-
-
-
-
-@media (max-width: 377px) {
+@media (max-width: 365px) {
   .text {
-    font-size: 18px;
+    font-size: 29px;
   }
 
   #embed-iframe {
     height: 150px;
   }
+
+  .events-container {
+
+    min-height: 0px;
+  }
+
+  .live {
+
+    margin-top: -220px;
+  }
+
 }
 
-/* brand new ipad air */
 
-@media (min-height: 850px) and (max-height: 1366px) {
+@media (max-width: 377px) and (max-height: 667px) {
+
+  .text {
+    font-size: 23px;
+    margin-top: 10px;
+  }
+
+  #embed-iframe {
+    height: 150px;
+
+  }
+
+  .events-container {
+
+    min-height: 0px;
+}
+
+  .live {
+
+  margin-top: -220px;
+  }
+
+}
+
+
+@media (max-width: 350px) and (max-height: 900px) {
+  .text {
+    font-size: 28px;
+  }
+
+  #embed-iframe {
+    height: 255px;
+  }
+
+}
+
+/* 
+
+brand new ipad Mini 
+(iPad Mini)
+
+*/
+
+@media (min-height: 1024px) and (max-height: 1100px) and (width: 768px)  {
+  .text {
+    font-size: 45px;
+  }
+
+  #embed-iframe {
+    height: 390px;
+    overflow:hidden;
+
+  }
+
+  .event-info h3 {
+    font-size: 22px;
+  }
+
+  .event-time, .event-location {
+    font-size: 18px;
+  }
+
+  .event-date {
+    width: 50px;
+    height: 50px;
+  }
+
+  .event-date p:first-child {
+    font-size: 30px;
+  }
+
+  .event-date p:last-child {
+    font-size: 25px;
+
+  }
+
+  .live {
+    margin-top: -120px;
+  }
+
+
+
+
+}
+
+
+/* 
+
+brand new ipad air 
+(iPad Air, iPad Pro)
+
+*/
+
+@media (min-height: 1025px) and (max-height: 1366px) and (min-width: 600px)  {
   .text {
     font-size: 40px;
   }
@@ -425,6 +535,7 @@ END:VCALENDAR`;
   #embed-iframe {
     height: 390px;
     overflow:hidden;
+
   }
 
   .event-info h3 {
@@ -446,9 +557,24 @@ END:VCALENDAR`;
 
   .event-date p:last-child {
     font-size: 25px;
+
   }
-  /* SAMSIINM ULTRA */
+
+  .live {
+    margin-top: -120px;
+  }
+  .events-container{
+
+    min-height: 400px;
+  }
+
 }
+
+
+
+
+  /* SAMSUNG ULTRA */
+
 @media (min-width: 400px) and (max-height: 932px) {
   .text {
     font-size: 35px;
@@ -457,9 +583,10 @@ END:VCALENDAR`;
   }
 .live{
 
-margin-top:-60px;
+margin-top:-70px;
 
 }
+
   #embed-iframe {
     height: 290px;
     overflow:hidden;
@@ -488,4 +615,47 @@ margin-top:-60px;
   }
   
 }
+
+
+@media (min-width: 900px) and (min-height: 1368px) {
+  .text {
+    font-size: 48px;
+  }
+
+  #embed-iframe {
+    height: 355px;
+  }
+
+  .event-info h3 {
+    font-size: 25px;
+  }
+
+  .event-time, .event-location {
+    font-size: 18px;
+  }
+
+  .event-date {
+    width: 50px;
+    height: 50px;
+  }
+
+  .event-date p:first-child {
+    font-size: 30px;
+  }
+
+  .event-date p:last-child {
+    font-size: 25px;
+
+  }
+
+  .live{
+
+    margin-top:-70px;
+
+
+}
+
+}
+
+
 </style>
