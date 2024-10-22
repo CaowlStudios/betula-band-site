@@ -225,6 +225,58 @@ h3 {
 }
 
 
+/* For smaller phones (iPhone SE) */
+@media (min-height: 500px) and (max-height:667px){ 
+  .email-content-container {
+    font-size: 20px;
+    min-height: 215px;
+  }
+
+  
+}
+
+
+
+/* For my brothers with a samsung */
+@media (min-height: 668px) and (max-height:760px){ 
+  .email-content-container {
+    font-size: 20px;
+    min-height: 235px;
+  }
+
+  
+}
+
+
+
+/* For my brothers with a samsung */
+@media (min-height: 1024px) and (max-height:1368px){ 
+  .email-content-container {
+    font-size: 20px;
+
+  }
+
+
+  h1 {
+    font-size: 45px;
+
+  }
+
+  h3 {
+    font-size: 25px;
+
+  }
+
+  .sendbutton{
+
+  width: 45px;
+  height: 45px;
+  margin-top: 30px;
+  }
+
+
+  
+}
 
 
 </style>

@@ -529,7 +529,7 @@ brand new ipad air
 
 @media (min-height: 1025px) and (max-height: 1366px) and (min-width: 600px)  {
   .text {
-    font-size: 40px;
+    font-size: 45px;
   }
 
   #embed-iframe {
