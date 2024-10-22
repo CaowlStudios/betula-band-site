@@ -6,6 +6,39 @@ import MusicPage from "./components/pages/MusicPage.vue";
 import GalleryPage from "./components/pages/GallaryPage.vue"
 import ContactPage from "./components/pages/ContactPage.vue";
 import VueScrollSnap from "vue-scroll-snap";
+
+
+//check mobile device function
+type DeviceType = 'Phone' | 'Tablet' | 'Desktop' | 'Unknown';
+
+function getDeviceTypeAndResolution(): { deviceType: DeviceType; resolution: string } {
+  const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+
+  const isPhone = /android|webos|iphone|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
+  const isTablet = /ipad|android/i.test(userAgent) && !isPhone;
+
+  const deviceType: DeviceType = isPhone
+    ? 'Phone'
+    : isTablet
+    ? 'Tablet'
+    : window.innerWidth <= 1024
+    ? 'Phone'
+    : 'Desktop';
+
+  const resolution = `${window.innerWidth}x${window.innerHeight}`;
+
+  return {
+    deviceType,
+    resolution,
+  };
+}
+
+// Usage
+const deviceInfo = getDeviceTypeAndResolution();
+console.log(deviceInfo.deviceType);  // Outputs: 'Phone', 'Tablet', or 'Desktop'
+console.log(deviceInfo.resolution);  // Outputs: Screen resolution, e.g. '1920x1080'
+
+
 </script>
 
 <template>
