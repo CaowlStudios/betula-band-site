@@ -59,8 +59,53 @@ console.log(deviceInfo.resolution);  // Outputs: Screen resolution, e.g. '1920x1
 </template>
 
 <style scoped>
+
+
 .scroll-snap-container {
+  
   scroll-behavior: smooth;
   transition: scroll 1.5s ease; /* TODO: adjust for slower scroll */
+
+  display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
+
+.scroll-snap-container {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory; /* Mandatory vertical snap */
+    scroll-behavior: smooth;
+}
+
+.scroll-snap-container.horizontal {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory; /* Mandatory horizontal snap */
+}
+
+.scroll-snap-container.fullscreen {
+    width: 100vw;
+    height: 100vh;
+}
+
+.scroll-snap-container > .item {
+    scroll-snap-align: start; /* Snap alignment */
+    scroll-snap-stop: always; /* Prevents scrolling past snap point */
+}
+
+.scroll-snap-container.fullscreen > .item {
+    min-height: 100vh; /* Full height for vertical scrolling */
+    flex: 1;
+}
+
+.scroll-snap-container.fullscreen.horizontal > .item {
+    min-width: 100vw; /* Full width for horizontal scrolling */
+    flex: 1;
+}
+
+
+
 </style>
