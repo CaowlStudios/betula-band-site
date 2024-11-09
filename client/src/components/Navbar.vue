@@ -43,25 +43,32 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount, watch } from "vue";
+import { ref, onMounted, onBeforeUnmount, watch, provide } from "vue";
 
 // Scroll lock implementation
 function useScrollLock() {
   const isLocked = ref(false);
+  let scrollPosition = 0;
   
   const lockScroll = () => {
     if (isLocked.value) return;
     
-    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-    // TODO: check unused
-    const originalStyle = {
-      overflow: document.body.style.overflow,
-      paddingRight: document.body.style.paddingRight
-    };
+    // Store current scroll position
+    scrollPosition = window.scrollY;
     
-    // Prevent content shift
+    // Calculate scrollbar width
+    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+    
+    // Save current body styles
+    const originalStyle = window.getComputedStyle(document.body);
+    const paddingRight = parseInt(originalStyle.paddingRight, 10) || 0;
+    
+    // Apply scroll lock styles
     document.body.style.overflow = 'hidden';
-    document.body.style.paddingRight = `${scrollBarWidth}px`;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollPosition}px`;
+    document.body.style.width = '100%';
+    document.body.style.paddingRight = `${paddingRight + scrollBarWidth}px`;
     
     isLocked.value = true;
   };
@@ -69,10 +76,25 @@ function useScrollLock() {
   const unlockScroll = () => {
     if (!isLocked.value) return;
     
-    document.body.style.overflow = '';
-    document.body.style.paddingRight = '';
+    // Remove scroll lock styles
+    document.body.style.removeProperty('overflow');
+    document.body.style.removeProperty('position');
+    document.body.style.removeProperty('top');
+    document.body.style.removeProperty('width');
+    document.body.style.removeProperty('padding-right');
+    
+    // Restore scroll position
+    window.scrollTo(0, scrollPosition);
+    
     isLocked.value = false;
   };
+  
+  // Clean up on component unmount
+  onBeforeUnmount(() => {
+    if (isLocked.value) {
+      unlockScroll();
+    }
+  });
   
   return {
     isLocked,
@@ -80,12 +102,16 @@ function useScrollLock() {
     unlockScroll
   };
 }
-
 const { lockScroll, unlockScroll } = useScrollLock();
+
 const isActive = ref(false);
+provide("isActive", isActive);
+
+const emit = defineEmits(["toggle"]);
 
 function toggleNavbar() {
   isActive.value = !isActive.value;
+  emit("toggle");
 }
 
 watch(() => isActive.value, (newValue) => {

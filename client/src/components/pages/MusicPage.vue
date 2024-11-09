@@ -1,13 +1,24 @@
 <template>
   <div class="main-container">
-    <Navbar />
-    <div v-if="isActive">
-      <NavBarPage></NavBarPage>
+    <Navbar @toggle="handleToggle" />
+    <div v-if="isActiveComputed">
     </div>
     <div class="content-container" v-else>
       <div class="listen">
         <p class="text">Listen to our music on Spotify</p>
-        <div id="embed-iframe"></div>
+        <div id="embed-iframe" v-if="!isActive">
+          <iframe
+            v-if="!isActive"
+            style="border-radius: 12px;"
+            :src="spotifyIframeSrc"
+            width="100%"
+            height="120%"
+            frameborder="0"
+            allowfullscreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
+        </div>
       </div>
       <div class="live">
         <p class="text">Or come watch us live</p>
@@ -57,7 +68,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, inject } from 'vue';
+import { onMounted, ref, computed } from 'vue';
 import Navbar from "../Navbar.vue";
 import dayjs from 'dayjs';
 
@@ -69,7 +80,13 @@ interface Event {
 }
 
 const events = ref<Event[]>([]);
-const isActive = inject("isActive");
+const isActive = ref(false);
+
+const handleToggle = () => {
+  isActive.value = !isActive.value;
+};
+
+const isActiveComputed = computed(() => isActive.value);
 
 // Add the Spotify iFrame API script
 if (typeof window !== 'undefined' && !document.querySelector('script[src="https://open.spotify.com/embed/iframe-api/v1"]')) {
@@ -78,6 +95,10 @@ if (typeof window !== 'undefined' && !document.querySelector('script[src="https:
   script.async = true;
   document.body.appendChild(script);
 }
+
+const spotifyIframeSrc = computed(() => {
+  return "https://open.spotify.com/embed/track/1CsMKhwEmNnmvHUuO5nryA?utm_source=generator";
+});
 
 // Append the Spotify iframe dynamically when the component mounts
 onMounted(() => {
